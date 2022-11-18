@@ -21,10 +21,11 @@
         <entry key="app/src/main/res/font/font.xml" value="0.146875" />
         <entry key="app/src/main/res/layout-v23/fragment_home.xml" value="0.11666666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11398176291793313" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/best_seller_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.14" />
-        <entry key="app/src/main/res/layout/viewpager_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/viewpager_item.xml" value="0.174742231081009" />
         <entry key="app/src/main/res/layout/virepager_item.xml" value="0.2" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1328125" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1328125" />

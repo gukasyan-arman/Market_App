@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bottom_nav_background.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/cancel_button_background.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/done_button_background.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_filter_alt_24.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.1328125" />
@@ -24,7 +26,8 @@
         <entry key="app/src/main/res/layout-v23/fragment_home.xml" value="0.11666666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11398176291793313" />
         <entry key="app/src/main/res/layout/best_seller_item.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.16530797101449277" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.14" />
         <entry key="app/src/main/res/layout/viewpager_item.xml" value="0.174742231081009" />

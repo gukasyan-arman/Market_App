@@ -11,9 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testapp.R
 import com.example.testapp.adapters.BestSellerAdapter
+import com.example.testapp.adapters.CategoryItemAdapter
 import com.example.testapp.adapters.ViewPagerAdapter
 import com.example.testapp.databinding.FragmentHomeBinding
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
     private val homeViewModel by viewModels<HomeViewModel>()
     lateinit var viewPagerAdapter: ViewPagerAdapter
     lateinit var bestSellerAdapter: BestSellerAdapter
+    lateinit var categoryItemAdapter: CategoryItemAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
 
         initViewPagerAdapter()
         initBestSellerAdapter()
+        initCategoryItemAdapter()
 
         homeViewModel.allGoods
 
@@ -77,6 +79,26 @@ class HomeFragment : Fragment() {
         bestSellerAdapter = BestSellerAdapter()
         binding.bestSellerRv.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.bestSellerRv.adapter = bestSellerAdapter
+    }
+
+    private fun initCategoryItemAdapter() {
+        categoryItemAdapter = CategoryItemAdapter(
+            listOf(
+                R.drawable.ic_phone,
+                R.drawable.ic_computer,
+                R.drawable.ic_health,
+                R.drawable.ic_books,
+            ),
+            listOf(
+                "Phones",
+                "Computers",
+                "Healths",
+                "Books",
+            )) {
+            Toast.makeText(requireContext(), "image${it}", Toast.LENGTH_SHORT).show()
+        }
+        binding.categoryButtonsRv.adapter = categoryItemAdapter
+
     }
 
     private fun initViewPagerAdapter() {

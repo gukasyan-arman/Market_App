@@ -4,8 +4,6 @@
     android:shape="rectangle"
     android:tint="@color/blue">
 
-    <solid android:color="@color/blue" />
-
     <corners android:radius="10dp"/>
     <size
         android:height="40dp"

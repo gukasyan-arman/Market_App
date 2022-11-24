@@ -1,7 +1,6 @@
 package com.example.testapp.adapters
 
 import android.content.res.ColorStateList
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,7 +41,7 @@ class CategoryItemAdapter(
             for (categoryItem in itemsList) {
                 if (!categoryItem.isSelected) {
                     categoryItemImage.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
-                    categoryItemImage.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.gray))
+                    categoryItemImage.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.light_gray))
                 }
             }
 
@@ -56,7 +55,7 @@ class CategoryItemAdapter(
                     } else {
                         categoryItemTitle.setTextColor(ContextCompat.getColor(context,R.color.blue))
                         categoryItemImage.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
-                        categoryItemImage.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.gray))
+                        categoryItemImage.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.light_gray))
                     }
                 }
             }

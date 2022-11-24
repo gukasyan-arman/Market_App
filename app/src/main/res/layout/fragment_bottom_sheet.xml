@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.BottomSheetFragment">
 
     <LinearLayout
@@ -22,10 +23,12 @@
             android:orientation="horizontal">
 
             <Button
+                android:layout_weight="0"
                 android:id="@+id/filterCancelBtn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/blue"
+                android:background="@drawable/cancel_button_background"
+                app:backgroundTint="@null"
                 android:text="x"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -33,8 +36,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:layout_marginHorizontal="20dp"
                 android:fontFamily="@font/mark_pro"
                 android:text="@string/filter_options"
@@ -42,14 +47,13 @@
                 android:textSize="18sp" />
 
             <Button
+                android:layout_weight="0"
                 android:id="@+id/filterDoneBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/orange"
+                android:background="@drawable/done_button_background"
                 android:fontFamily="@font/mark_pro"
-                android:gravity="center"
                 android:text="@string/done"
-                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 

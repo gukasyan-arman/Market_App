@@ -5,9 +5,14 @@
       <map>
         <entry key="app/src/main/res/drawable/bottom_nav_background.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/cancel_button_background.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/color_radio_selector.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/drawable/detail_radio_item.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/done_button_background.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1648148148148148" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1328125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24_white.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_filter_alt_24.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.1328125" />
         <entry key="app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1328125" />
@@ -29,7 +34,9 @@
         <entry key="app/src/main/res/layout/best_seller_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/category_button_item.xml" value="0.67" />
         <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.16530797101449277" />
-        <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/fragment_basket.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.2075374233708135" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.14" />

@@ -173,8 +173,8 @@
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="none"
-                            android:text="Shop"
+                            android:button="@null"
+                            android:text="@string/shop_radio"
                             android:textSize="20sp"
                             android:checked="true"/>
 
@@ -183,8 +183,8 @@
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="none"
-                            android:text="Details"
+                            android:button="@null"
+                            android:text="@string/details_radio"
                             android:textSize="20sp"/>
 
                         <RadioButton
@@ -192,8 +192,8 @@
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="none"
-                            android:text="Features"
+                            android:button="@null"
+                            android:text="@string/features_text"
                             android:textSize="20sp"
                             android:fontFamily="@font/mark_pro"/>
                     </RadioGroup>

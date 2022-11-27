@@ -5,15 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testapp.R
-import com.example.testapp.adapters.BestSellerAdapter
-import com.example.testapp.adapters.CategoryItemAdapter
-import com.example.testapp.adapters.ViewPagerAdapter
+import com.example.testapp.ui.adapters.BestSellerAdapter
+import com.example.testapp.ui.adapters.CategoryItemAdapter
+import com.example.testapp.ui.adapters.ViewPagerAdapter
 import com.example.testapp.databinding.FragmentHomeBinding
 import com.example.testapp.models.CategoryItem
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,16 +48,28 @@ class HomeFragment : Fragment() {
         initBestSellerAdapter()
         initCategoryItemAdapter()
 
-        homeViewModel.allGoods
-
-        homeViewModel.allGoods.observe(viewLifecycleOwner) {
-            it.home_store.let {
-                viewPagerAdapter.differ.submitList(it)
-            }
-            it.best_seller.let {
+        homeViewModel.bestSeller.observe(viewLifecycleOwner) {
+            it.let {
                 bestSellerAdapter.differ.submitList(it)
             }
         }
+
+        homeViewModel.homeStore.observe(viewLifecycleOwner) {
+            it.let {
+                viewPagerAdapter.differ.submitList(it)
+            }
+        }
+
+//        homeViewModel.allGoods
+//
+//        homeViewModel.allGoods.observe(viewLifecycleOwner) {
+//            it.home_store.let {
+//                viewPagerAdapter.differ.submitList(it)
+//            }
+//            it.best_seller.let {
+//                bestSellerAdapter.differ.submitList(it)
+//            }
+//        }
 
         binding.filter.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetFragment)

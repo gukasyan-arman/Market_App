@@ -1,4 +1,4 @@
-package com.example.testapp.adapters
+package com.example.testapp.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.domain.models.BestSeller
 import com.example.testapp.R
-import com.example.testapp.models.BestSeller
 import kotlinx.android.synthetic.main.best_seller_item.view.*
 
 

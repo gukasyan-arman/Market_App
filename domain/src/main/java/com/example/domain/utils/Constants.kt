@@ -1,4 +1,4 @@
-package com.example.testapp.utils
+package com.example.domain.utils
 
 const val BASE_URL = "https://run.mocky.io/v3/"
 const val BASKET_END_POINT = "53539a72-3c5f-4f30-bbb1-6ca10d42c149"

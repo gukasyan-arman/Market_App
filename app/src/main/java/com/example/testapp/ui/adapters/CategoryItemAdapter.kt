@@ -1,4 +1,4 @@
-package com.example.testapp.adapters
+package com.example.testapp.ui.adapters
 
 import android.content.res.ColorStateList
 import android.view.LayoutInflater

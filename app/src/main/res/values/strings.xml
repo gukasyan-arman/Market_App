@@ -34,6 +34,9 @@
     <string name="total">Total</string>
     <string name="delivery">Delivery</string>
     <string name="checkout">checkout</string>
+    <string name="features_text">Features</string>
+    <string name="details_radio">Details</string>
+    <string name="shop_radio">Shop</string>
 
     <string-array name="phones">
 

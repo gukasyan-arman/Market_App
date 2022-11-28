@@ -35,7 +35,7 @@ class HomeViewModel @Inject constructor(
         getHomeStore()
     }
 
-        fun getBestSeller() {
+        private fun getBestSeller() {
             getBestSellerUseCase().onEach {
                 when(it) {
                     is Resource.Loading -> {
@@ -51,7 +51,7 @@ class HomeViewModel @Inject constructor(
             }.launchIn(viewModelScope)
         }
 
-    fun getHomeStore() {
+    private fun getHomeStore() {
             getHomeStoreUseCase().onEach {
                 when(it) {
                     is Resource.Loading -> {

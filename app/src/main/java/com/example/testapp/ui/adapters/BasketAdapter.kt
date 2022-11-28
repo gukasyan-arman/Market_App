@@ -12,7 +12,7 @@ import com.example.domain.models.basket.Basket
 import com.example.testapp.R
 import kotlinx.android.synthetic.main.basket_list_item.view.*
 
-class BasketAdapter(): RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+class BasketAdapter: RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
     inner class BasketViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 

@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.models.detail.DetailResponse
 import com.example.testapp.R
 import kotlinx.android.synthetic.main.detail_view_pager_item.view.*
 
-class DetailViewPagerAdapter(): RecyclerView.Adapter<DetailViewPagerAdapter.PagerViewHolder>() {
+class DetailViewPagerAdapter: RecyclerView.Adapter<DetailViewPagerAdapter.PagerViewHolder>() {
 
     inner class PagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 

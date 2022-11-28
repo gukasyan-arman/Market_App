@@ -11,7 +11,7 @@ import com.example.domain.models.home.HomeStore
 import com.example.testapp.R
 import kotlinx.android.synthetic.main.viewpager_item.view.*
 
-class HomeViewPagerAdapter(): RecyclerView.Adapter<HomeViewPagerAdapter.PagerViewHolder>() {
+class HomeViewPagerAdapter: RecyclerView.Adapter<HomeViewPagerAdapter.PagerViewHolder>() {
 
     inner class PagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 

@@ -46,6 +46,12 @@
     <string name="remove_from_basket">remove from basket</string>
     <string name="minus_product">minus product</string>
     <string name="plus_product">plus product</string>
+    <string name="_1">1</string>
+    <string name="detailpagerimage">detailPagerImage</string>
+    <string name="samsung">Samsung</string>
+    <string name="_300_500">$300 - $500</string>
+    <string name="_4_5_to_5_5_inches">4.5 to 5.5 inches</string>
+    <string name="splashImage">splashImage</string>
 
     <string-array name="phones">
 

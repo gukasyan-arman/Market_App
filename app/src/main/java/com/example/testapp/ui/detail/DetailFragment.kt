@@ -8,14 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.domain.models.detail.DetailResponse
 import com.example.testapp.R
 import com.example.testapp.databinding.FragmentDetailBinding
 import com.example.testapp.ui.adapters.DetailViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Response
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {

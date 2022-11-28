@@ -1,6 +1,5 @@
 package com.example.domain.use_cases
 
-import com.example.domain.models.detail.DetailImages
 import com.example.domain.repository.DetailRepository
 import com.example.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow

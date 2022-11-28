@@ -130,7 +130,8 @@
                 android:paddingStart="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/categoryButtonsRv" />
+                app:layout_constraintTop_toBottomOf="@+id/categoryButtonsRv"
+                android:autofillHints="" />
 
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

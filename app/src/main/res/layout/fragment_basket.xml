@@ -9,7 +9,7 @@
     tools:context=".ui.basket.BasketFragment">
 
     <Toolbar
-        android:id="@+id/basketlTopNavigation"
+        android:id="@+id/basketTopNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/basketlBackButton"
+                android:id="@+id/basketBackButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"
@@ -141,7 +141,7 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/mark_pro"
                 android:textSize="16sp"
-                android:text="$6,000 us"
+                tools:text="$6,000 us"
                 app:layout_constraintTop_toBottomOf="@id/basketFirstLine"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -167,7 +167,7 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/mark_pro"
                 android:textSize="16sp"
-                android:text="Free"
+                tools:text="Free"
                 app:layout_constraintTop_toBottomOf="@id/totalTitle"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -197,7 +197,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/basketLastLine"
-                app:layout_constraintVertical_bias="0.935" />
+                app:layout_constraintVertical_bias="0.935"
+                tools:ignore="TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -18,13 +18,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_phone"/>
+        android:src="@drawable/ic_phone"
+        android:contentDescription="@string/select_category" />
 
     <TextView
         android:id="@+id/categoryItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        tools:text="TextView"
         android:textColor="@color/blue"
         android:fontFamily="@font/mark_pro"
         android:textSize="12sp"

@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Samsung" />
+                android:text="@string/samsung" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="$300 - $500" />
+                android:text="@string/_300_500" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="4.5 to 5.5 inches" />
+                android:text="@string/_4_5_to_5_5_inches" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

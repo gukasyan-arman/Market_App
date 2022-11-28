@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.models.detail.DetailImages
 import com.example.domain.models.detail.DetailResponse
 import com.example.domain.use_cases.GetDetailImagesUseCase
 import com.example.domain.use_cases.GetDetailUseCase
@@ -31,7 +30,6 @@ class DetailViewModel @Inject constructor(
 
     init {
         getDetailResponse()
-//        getDetailImages()
     }
 
     fun getDetailResponse() {
@@ -63,21 +61,4 @@ class DetailViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
-
-//    fun getDetailImages() {
-//        getDetailImagesUseCase().onEach {
-//            when(it) {
-//                is Resource.Loading -> {
-//                    Log.d("getDetail", "Loading")
-//                }
-//                is Resource.Success -> {
-//                    _detailImages.value = it.data!!
-//                }
-//                is Resource.Error -> {
-//                    Log.e("getDetail", "some error")
-//                }
-//            }
-//        }.launchIn(viewModelScope)
-//    }
-
 }

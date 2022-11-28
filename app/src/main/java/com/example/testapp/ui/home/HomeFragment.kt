@@ -24,10 +24,10 @@ class HomeFragment : Fragment(), BestSellerAdapter.Listener {
 
     private val homeViewModel by viewModels<HomeViewModel>()
 
-    lateinit var viewPagerAdapter: HomeViewPagerAdapter
+    private lateinit var viewPagerAdapter: HomeViewPagerAdapter
     private lateinit var bestSellerAdapter: BestSellerAdapter
     private lateinit var categoryItemAdapter: CategoryItemAdapter
-    private val categoryItemsList = listOf<CategoryItem>(
+    private val categoryItemsList = listOf(
         CategoryItem(R.drawable.ic_phone, "Phones", false),
         CategoryItem(R.drawable.ic_computer, "Computers", false),
         CategoryItem(R.drawable.ic_health, "Healths", false),
@@ -71,7 +71,7 @@ class HomeFragment : Fragment(), BestSellerAdapter.Listener {
 
     private fun initCategoryItemAdapter() {
         categoryItemAdapter = CategoryItemAdapter(categoryItemsList) {
-            Toast.makeText(requireContext(), "${it}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
         }
         binding.categoryButtonsRv.adapter = categoryItemAdapter
 

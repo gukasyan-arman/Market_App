@@ -1,4 +1,4 @@
-package com.example.data.network.models
+package com.example.data.network.models.home
 
 data class GoodsResponseDTO(
     val best_seller: List<BestSellerDTO>,

@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
 
-    lateinit var binding: FragmentBottomSheetBinding
+    private lateinit var binding: FragmentBottomSheetBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +31,12 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         initSizesDropdown()
 
         binding.filterCancelBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_bottomSheetFragment_to_homeFragment)
+            dismiss()
         }
 
         binding.filterDoneBtn.setOnClickListener {
             Toast.makeText(context, "Filters applied", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_bottomSheetFragment_to_homeFragment)
+            dismiss()
         }
 
     }

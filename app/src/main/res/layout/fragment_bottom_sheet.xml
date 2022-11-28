@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +14,8 @@
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:orientation="vertical"
-        android:paddingStart="32dp">
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,17 +25,17 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_weight="0"
                 android:id="@+id/filterCancelBtn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
                 android:background="@drawable/cancel_button_background"
-                app:backgroundTint="@null"
                 android:text="x"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
 
             <TextView
                 android:layout_weight="1"
@@ -41,21 +43,23 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_marginHorizontal="20dp"
-                android:fontFamily="@font/mark_pro"
+                android:fontFamily="@font/mark_pro_bold"
                 android:text="@string/filter_options"
                 android:textColor="@color/blue"
                 android:textSize="18sp" />
 
             <Button
-                android:layout_weight="0"
                 android:id="@+id/filterDoneBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/done_button_background"
-                android:fontFamily="@font/mark_pro"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@drawable/cancel_button_background"
                 android:text="@string/done"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange" />
 
         </LinearLayout>
 

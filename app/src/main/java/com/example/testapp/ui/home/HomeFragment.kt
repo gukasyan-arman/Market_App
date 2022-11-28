@@ -12,18 +12,19 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testapp.R
 import com.example.testapp.ui.adapters.BestSellerAdapter
 import com.example.testapp.ui.adapters.CategoryItemAdapter
-import com.example.testapp.ui.adapters.ViewPagerAdapter
+import com.example.testapp.ui.adapters.HomeViewPagerAdapter
 import com.example.testapp.databinding.FragmentHomeBinding
 import com.example.testapp.models.CategoryItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), BestSellerAdapter.Listener {
 
     private lateinit var binding: FragmentHomeBinding
 
     private val homeViewModel by viewModels<HomeViewModel>()
-    lateinit var viewPagerAdapter: ViewPagerAdapter
+
+    lateinit var viewPagerAdapter: HomeViewPagerAdapter
     private lateinit var bestSellerAdapter: BestSellerAdapter
     private lateinit var categoryItemAdapter: CategoryItemAdapter
     private val categoryItemsList = listOf<CategoryItem>(
@@ -49,27 +50,12 @@ class HomeFragment : Fragment() {
         initCategoryItemAdapter()
 
         homeViewModel.bestSeller.observe(viewLifecycleOwner) {
-            it.let {
-                bestSellerAdapter.differ.submitList(it)
-            }
+            bestSellerAdapter.differ.submitList(it)
         }
 
         homeViewModel.homeStore.observe(viewLifecycleOwner) {
-            it.let {
-                viewPagerAdapter.differ.submitList(it)
-            }
+            viewPagerAdapter.differ.submitList(it)
         }
-
-//        homeViewModel.allGoods
-//
-//        homeViewModel.allGoods.observe(viewLifecycleOwner) {
-//            it.home_store.let {
-//                viewPagerAdapter.differ.submitList(it)
-//            }
-//            it.best_seller.let {
-//                bestSellerAdapter.differ.submitList(it)
-//            }
-//        }
 
         binding.filter.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetFragment)
@@ -78,7 +64,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initBestSellerAdapter() {
-        bestSellerAdapter = BestSellerAdapter()
+        bestSellerAdapter = BestSellerAdapter(this)
         binding.bestSellerRv.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.bestSellerRv.adapter = bestSellerAdapter
     }
@@ -92,8 +78,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViewPagerAdapter() {
-        viewPagerAdapter = ViewPagerAdapter()
+        viewPagerAdapter = HomeViewPagerAdapter()
         binding.viewPager.adapter = viewPagerAdapter
+    }
+
+    override fun onClick() {
+        findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
     }
 
 }

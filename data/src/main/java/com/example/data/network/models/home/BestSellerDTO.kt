@@ -1,6 +1,6 @@
-package com.example.testapp.models
+package com.example.data.network.models.home
 
-data class BestSeller(
+data class BestSellerDTO(
     val discount_price: Int,
     val id: Int,
     val is_favorites: Boolean,

@@ -1,6 +1,6 @@
-package com.example.testapp.models
+package com.example.data.network.models.home
 
-data class HomeStore(
+data class HomeStoreDTO(
     val id: Int,
     val is_buy: Boolean,
     val is_new: Boolean,

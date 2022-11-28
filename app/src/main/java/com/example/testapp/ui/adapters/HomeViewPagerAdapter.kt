@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.models.HomeStore
+import com.example.domain.models.home.HomeStore
 import com.example.testapp.R
 import kotlinx.android.synthetic.main.viewpager_item.view.*
 
-class ViewPagerAdapter(): RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
+class HomeViewPagerAdapter(): RecyclerView.Adapter<HomeViewPagerAdapter.PagerViewHolder>() {
 
     inner class PagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
@@ -31,13 +31,13 @@ class ViewPagerAdapter(): RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewPagerAdapter.PagerViewHolder {
+    ): HomeViewPagerAdapter.PagerViewHolder {
         return PagerViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.viewpager_item, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewPagerAdapter.PagerViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeViewPagerAdapter.PagerViewHolder, position: Int) {
         val product = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(product.picture).centerCrop().into(pagerImage)

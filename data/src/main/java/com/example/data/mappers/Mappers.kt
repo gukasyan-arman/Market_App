@@ -1,9 +1,11 @@
 package com.example.data.mappers
 
-import com.example.data.network.models.BestSellerDTO
-import com.example.data.network.models.HomeStoreDTO
-import com.example.domain.models.BestSeller
-import com.example.domain.models.HomeStore
+import com.example.data.network.models.detail.DetailResponseDTO
+import com.example.data.network.models.home.BestSellerDTO
+import com.example.data.network.models.home.HomeStoreDTO
+import com.example.domain.models.detail.DetailResponse
+import com.example.domain.models.home.BestSeller
+import com.example.domain.models.home.HomeStore
 
 @JvmName("toDomainBestSellerDTO")
 fun List<BestSellerDTO>.toDomain(): List<BestSeller> {
@@ -30,4 +32,21 @@ fun List<HomeStoreDTO>.toDomain(): List<HomeStore> {
             title = it.title
         )
     }
+}
+
+fun DetailResponseDTO.toDomain(): DetailResponse {
+    return DetailResponse(
+        CPU = CPU,
+        camera = camera,
+        capacity = capacity,
+        color = color,
+        id = id,
+        images = images,
+        isFavorites = isFavorites,
+        price = price,
+        rating = rating,
+        sd = sd,
+        ssd = ssd,
+        title = title
+    )
 }

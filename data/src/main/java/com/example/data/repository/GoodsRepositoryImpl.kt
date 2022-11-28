@@ -3,8 +3,8 @@ package com.example.data.repository
 import com.example.data.mappers.toDomain
 import com.example.data.network.api.GoodsService
 import com.example.data.network.utils.SafeApiRequest
-import com.example.domain.models.BestSeller
-import com.example.domain.models.HomeStore
+import com.example.domain.models.home.BestSeller
+import com.example.domain.models.home.HomeStore
 import com.example.domain.repository.GoodsRepository
 import javax.inject.Inject
 

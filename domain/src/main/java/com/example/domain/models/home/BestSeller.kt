@@ -1,4 +1,4 @@
-package com.example.domain.models
+package com.example.domain.models.home
 
 data class BestSeller(
     val discount_price: Int,

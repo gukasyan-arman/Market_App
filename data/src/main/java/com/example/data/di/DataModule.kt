@@ -1,7 +1,10 @@
 package com.example.data.di
 
+import com.example.data.network.api.DetailService
 import com.example.data.network.api.GoodsService
+import com.example.data.repository.DetailRepositoryImpl
 import com.example.data.repository.GoodsRepositoryImpl
+import com.example.domain.repository.DetailRepository
 import com.example.domain.repository.GoodsRepository
 import com.example.domain.utils.BASE_URL
 import dagger.Module
@@ -41,5 +44,20 @@ object DataModule {
     @Provides
     fun provideGoodsRepository(goodsService: GoodsService): GoodsRepository {
         return GoodsRepositoryImpl(goodsService = goodsService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDetailService(baseUrl: String): DetailService =
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient())
+            .build()
+            .create(DetailService:: class.java)
+
+    @Provides
+    fun provideDetailRepository(detailService: DetailService): DetailRepository {
+        return DetailRepositoryImpl(detailService = detailService)
     }
 }

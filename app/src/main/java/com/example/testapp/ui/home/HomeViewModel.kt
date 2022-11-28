@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.models.BestSeller
-import com.example.domain.models.HomeStore
+import com.example.domain.models.home.BestSeller
+import com.example.domain.models.home.HomeStore
 import com.example.domain.use_cases.GetBestSellerUseCase
 import com.example.domain.use_cases.GetHomeStoreUseCase
 import com.example.domain.utils.Resource
@@ -66,26 +66,4 @@ class HomeViewModel @Inject constructor(
                 }
             }.launchIn(viewModelScope)
         }
-    }
-
-
-//@HiltViewModel
-//class HomeViewModel @Inject constructor(private val repository: com.example.data.network.api.GoodsRepository): ViewModel(){
-//    private val _allGoods = MutableLiveData<GoodsResponse>()
-//    val allGoods: LiveData<GoodsResponse>
-//        get() = _allGoods
-//
-//    init {
-//        getAll()
-//    }
-//
-//    fun getAll() = viewModelScope.launch {
-//        repository.getAll().let {
-//            if (it.isSuccessful) {
-//                _allGoods.postValue(it.body())
-//            } else {
-//                Log.d("checkData", "Failed to load ${it.errorBody()}")
-//            }
-//        }
-//    }
-//}
+}

@@ -1,6 +1,6 @@
 package com.example.domain.use_cases
 
-import com.example.domain.models.BestSeller
+import com.example.domain.models.home.BestSeller
 import com.example.domain.repository.GoodsRepository
 import com.example.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow

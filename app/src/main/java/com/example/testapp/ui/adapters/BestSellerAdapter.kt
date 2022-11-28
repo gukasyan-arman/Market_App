@@ -8,14 +8,18 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.models.BestSeller
+import com.example.domain.models.home.BestSeller
 import com.example.testapp.R
 import kotlinx.android.synthetic.main.best_seller_item.view.*
 
 
-class BestSellerAdapter(): RecyclerView.Adapter<BestSellerAdapter.BestSellerViewHolder>() {
+class BestSellerAdapter(private val listener: Listener): RecyclerView.Adapter<BestSellerAdapter.BestSellerViewHolder>() {
 
     inner class BestSellerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+
+    interface Listener {
+        fun onClick()
+    }
 
     private val callback = object : DiffUtil.ItemCallback<BestSeller>() {
         override fun areItemsTheSame(oldItem: BestSeller, newItem: BestSeller): Boolean {
@@ -52,6 +56,9 @@ class BestSellerAdapter(): RecyclerView.Adapter<BestSellerAdapter.BestSellerView
             } else {
                 favoriteToggle.setImageResource(R.drawable.ic_baseline_favorite_border_24)
             }
+        }
+        holder.itemView.setOnClickListener {
+            listener.onClick()
         }
     }
 

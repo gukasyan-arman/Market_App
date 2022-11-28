@@ -1,7 +1,7 @@
 package com.example.testapp.models
 
 data class CategoryItem (
-    val iconRes: Int,
+    val imageRes: Int,
     val text: String,
-    var isSelected: Boolean
+    var isSelected: Boolean,
 )

@@ -92,7 +92,7 @@
                     android:id="@+id/detailViewPager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="20dp" />
+                    android:layout_margin="20dp"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -149,54 +149,44 @@
                     <RatingBar
                         android:id="@+id/ratingBar"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:numStars="5"
-                        android:rating="3.5"
+                        android:rating="4.5"
                         android:theme="@style/MyRatingBar"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/titleBlock"
                         tools:ignore="SpeakableTextPresentCheck" />
 
-                    <RadioGroup
-                        android:id="@+id/detailFirstRadioGroup"
-                        android:layout_marginTop="12dp"
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleGroup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/ratingBar">
+                        android:layout_marginTop="24dp"
+                        app:singleSelection="true"
+                        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                        android:gravity="center">
 
-
-                        <RadioButton
-                            android:layout_weight="1"
-                            android:gravity="center"
+                        <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="@null"
                             android:text="@string/shop_radio"
-                            android:textSize="20sp"
-                            android:checked="true"/>
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <RadioButton
-                            android:layout_weight="1"
-                            android:gravity="center"
+                        <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="@null"
                             android:text="@string/details_radio"
-                            android:textSize="20sp"/>
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <RadioButton
-                            android:layout_weight="1"
-                            android:gravity="center"
+                        <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:button="@null"
                             android:text="@string/features_text"
-                            android:textSize="20sp"
-                            android:fontFamily="@font/mark_pro"/>
-                    </RadioGroup>
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
 
                     <ImageView
                         android:id="@+id/cpIcon"
@@ -206,7 +196,8 @@
                         android:src="@drawable/ic_processor"
                         app:layout_constraintEnd_toEndOf="@+id/cpText"
                         app:layout_constraintStart_toStartOf="@+id/cpText"
-                        app:layout_constraintTop_toBottomOf="@id/detailFirstRadioGroup" />
+                        app:layout_constraintTop_toBottomOf="@id/toggleGroup"
+                        android:contentDescription="@string/processor" />
 
                     <TextView
                         android:id="@+id/cpText"
@@ -229,7 +220,8 @@
                         android:src="@drawable/ic_camera"
                         app:layout_constraintEnd_toEndOf="@+id/cameraText"
                         app:layout_constraintStart_toStartOf="@+id/cameraText"
-                        app:layout_constraintTop_toBottomOf="@id/detailFirstRadioGroup" />
+                        app:layout_constraintTop_toBottomOf="@id/toggleGroup"
+                        android:contentDescription="@string/camera" />
 
                     <TextView
                         android:id="@+id/cameraText"
@@ -238,7 +230,7 @@
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/mark_pro"
-                        android:text="108 + 12 mp"
+                        tools:text="108 + 12 mp"
                         android:textColor="@color/light_gray"
                         android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/cpText"
@@ -249,10 +241,11 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/ic_operative_memory"
+                        android:src="@drawable/ic_hard_memory"
                         app:layout_constraintEnd_toEndOf="@+id/operativeMemoryText"
                         app:layout_constraintStart_toStartOf="@+id/operativeMemoryText"
-                        app:layout_constraintTop_toBottomOf="@id/detailFirstRadioGroup" />
+                        app:layout_constraintTop_toBottomOf="@id/toggleGroup"
+                        android:contentDescription="@string/qr_code" />
 
                     <TextView
                         android:id="@+id/operativeMemoryText"
@@ -261,7 +254,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="32dp"
                         android:fontFamily="@font/mark_pro"
-                        android:text="8 GB"
+                        tools:text="8 GB"
                         android:textColor="@color/light_gray"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toStartOf="@+id/hardMemoryText"
@@ -276,7 +269,8 @@
                         app:layout_constraintEnd_toEndOf="@+id/hardMemoryText"
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="@+id/hardMemoryText"
-                        app:layout_constraintTop_toBottomOf="@id/detailFirstRadioGroup" />
+                        app:layout_constraintTop_toBottomOf="@id/toggleGroup"
+                        android:contentDescription="@string/sd" />
 
                     <TextView
                         android:id="@+id/hardMemoryText"
@@ -285,7 +279,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/mark_pro"
-                        android:text="256 GB"
+                        tools:text="256 GB"
                         android:textColor="@color/light_gray"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -297,7 +291,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:fontFamily="@font/mark_pro_bold"
-                        android:text="Select color and capacity"
+                        android:text="@string/select_color_and_capacity"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -315,59 +309,45 @@
                         <RadioButton
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/search_background"
+                            android:background="@drawable/ic_baseline_circle_24"
                             android:backgroundTint="@color/blue"
                             android:layout_marginEnd="16dp"
                             android:elevation="5dp"
-                            android:foreground="@drawable/color_radio_selector"
-                            android:button="@drawable/ic_baseline_check_24"
-                            android:layout_weight="1"/>
+                            android:button="@drawable/ic_baseline_check_24"/>
 
                         <RadioButton
-                            android:layout_weight="1"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/search_background"
+                            android:background="@drawable/ic_baseline_circle_24"
                             android:backgroundTint="@color/brown"
                             android:elevation="5dp"
-                            android:foreground="@drawable/color_radio_selector"
-                            android:button="@drawable/ic_baseline_check_24" />
+                            android:button="@drawable/ic_baseline_check_24"/>
 
                     </RadioGroup>
 
-                    <RadioGroup
-                        android:id="@+id/memoryRadioGroup"
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleGroupMemory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/detailSelectColor">
+                        android:layout_marginTop="16dp"
+                        app:singleSelection="true"
+                        app:layout_constraintTop_toBottomOf="@+id/detailSelectColor"
+                        android:gravity="center">
 
-                        <RadioButton
+                        <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:background="@drawable/done_button_background"
-                            android:paddingHorizontal="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:text="128 GB"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
-                            android:button="@null"/>
+                            android:layout_height="wrap_content"
+                            android:text="@string/_128_gb"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
-                        <RadioButton
-                            android:layout_weight="1"
+                        <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:paddingHorizontal="20dp"
-                            android:backgroundTint="@color/blue"
-                            android:textColor="@color/medium_gray"
-                            android:textStyle="bold"
-                            android:text="256 GB"
-                            android:button="@null"/>
+                            android:layout_height="wrap_content"
+                            android:text="@string/_256_gb"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
-                    </RadioGroup>
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
 
                     <LinearLayout
                         android:id="@+id/addToCartBtn"
@@ -378,7 +358,7 @@
                         android:elevation="10dp"
                         android:layout_marginTop="32dp"
                         android:paddingHorizontal="32dp"
-                        app:layout_constraintTop_toBottomOf="@+id/memoryRadioGroup"
+                        app:layout_constraintTop_toBottomOf="@+id/toggleGroupMemory"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -393,13 +373,14 @@
                             android:text="@string/add_to_cart_text" />
 
                         <TextView
+                            android:id="@+id/detailPriceProduct"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/mark_pro_bold"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:text="@string/add_to_cart_text"
-                            android:textAlignment="viewEnd"/>
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 

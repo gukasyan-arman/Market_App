@@ -37,7 +37,7 @@ class CategoryItemAdapter(
 
         holder.itemView.apply {
             categoryItemTitle.text = item.text
-            categoryItemImage.setImageResource(item.iconRes)
+            categoryItemImage.setImageResource(item.imageRes)
             for (categoryItem in itemsList) {
                 if (!categoryItem.isSelected) {
                     categoryItemImage.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))

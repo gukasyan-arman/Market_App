@@ -1,9 +1,12 @@
 package com.example.data.di
 
+import com.example.data.network.api.BasketService
 import com.example.data.network.api.DetailService
 import com.example.data.network.api.GoodsService
+import com.example.data.repository.BasketRepositoryImpl
 import com.example.data.repository.DetailRepositoryImpl
 import com.example.data.repository.GoodsRepositoryImpl
+import com.example.domain.repository.BasketRepository
 import com.example.domain.repository.DetailRepository
 import com.example.domain.repository.GoodsRepository
 import com.example.domain.utils.BASE_URL
@@ -60,4 +63,20 @@ object DataModule {
     fun provideDetailRepository(detailService: DetailService): DetailRepository {
         return DetailRepositoryImpl(detailService = detailService)
     }
+
+    @Provides
+    @Singleton
+    fun provideBasketService(baseUrl: String): BasketService =
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient())
+            .build()
+            .create(BasketService:: class.java)
+
+    @Provides
+    fun provideBasketRepository(basketResponseService: BasketService): BasketRepository {
+        return BasketRepositoryImpl(basketResponseService = basketResponseService)
+    }
+
 }

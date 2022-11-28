@@ -10,4 +10,5 @@
     <color name="star_yellow">#FFB800</color>
     <color name="medium_gray">#8D8D8D</color>
     <color name="brown">#772D03</color>
+    <color name="basket_counter_background">#282843</color>
 </resources>

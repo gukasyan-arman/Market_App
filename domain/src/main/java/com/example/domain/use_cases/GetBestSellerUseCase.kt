@@ -14,7 +14,7 @@ class GetBestSellerUseCase @Inject constructor(private val goodsRepository: Good
             val response = goodsRepository.getBestSeller()
             emit(Resource.Success(data = response))
         } catch (e: Exception) {
-            emit(Resource.Error("Error!!!"))
+            emit(Resource.Error("Error getting best seller!!!"))
         }
     }
 }

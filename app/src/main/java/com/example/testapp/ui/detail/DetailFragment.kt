@@ -7,9 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.models.detail.DetailResponse
+import com.example.testapp.R
 import com.example.testapp.databinding.FragmentDetailBinding
 import com.example.testapp.ui.adapters.DetailViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import retrofit2.Response
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -32,6 +38,10 @@ class DetailFragment : Fragment() {
 
         initViewPagerAdapter()
 
+        detailViewModel.detailImages.observe(viewLifecycleOwner) {
+            viewPagerAdapter.differ.submitList(it)
+        }
+
         detailViewModel.detailResponse.observe(viewLifecycleOwner) {
             binding.cpText.text = it.CPU
             binding.cameraText.text = it.camera
@@ -39,6 +49,14 @@ class DetailFragment : Fragment() {
             binding.operativeMemoryText.text = it.ssd
             binding.detailPriceProduct.text = "$${it.price}"
             binding.detailTitle.text = it.title
+        }
+
+        binding.detailBackButton.setOnClickListener {
+            findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
+        }
+
+        binding.detailBasketButton.setOnClickListener {
+            findNavController().navigate(R.id.action_detailFragment_to_basketFragment)
         }
 
     }

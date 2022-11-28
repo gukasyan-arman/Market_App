@@ -15,12 +15,12 @@ class DetailViewPagerAdapter(): RecyclerView.Adapter<DetailViewPagerAdapter.Page
 
     inner class PagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
-    private val callback = object : DiffUtil.ItemCallback<DetailResponse>() {
-        override fun areItemsTheSame(oldItem: DetailResponse, newItem: DetailResponse): Boolean {
-            return oldItem.id == newItem.id
+    private val callback = object : DiffUtil.ItemCallback<String>() {
+        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+            return oldItem.hashCode() == newItem.hashCode()
         }
 
-        override fun areContentsTheSame(oldItem: DetailResponse, newItem: DetailResponse): Boolean {
+        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }
     }
@@ -34,9 +34,9 @@ class DetailViewPagerAdapter(): RecyclerView.Adapter<DetailViewPagerAdapter.Page
     }
 
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
-        val image = differ.currentList[position].images[position]
+        val image = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(image).placeholder(R.mipmap.ic_launcher).centerCrop().into(detailPagerImage)
+            Glide.with(this).load(image).centerCrop().into(detailPagerImage)
         }
     }
 

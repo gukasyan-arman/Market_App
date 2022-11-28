@@ -1,10 +1,9 @@
 package com.example.domain.di
 
+import com.example.domain.repository.BasketRepository
 import com.example.domain.repository.DetailRepository
 import com.example.domain.repository.GoodsRepository
-import com.example.domain.use_cases.GetBestSellerUseCase
-import com.example.domain.use_cases.GetDetailUseCase
-import com.example.domain.use_cases.GetHomeStoreUseCase
+import com.example.domain.use_cases.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +26,21 @@ object DomainModule {
     @Provides
     fun getDetailUseCase(detailRepository: DetailRepository): GetDetailUseCase {
         return GetDetailUseCase(detailRepository)
+    }
+
+    @Provides
+    fun getDetailImagesUseCase(detailRepository: DetailRepository): GetDetailImagesUseCase {
+        return GetDetailImagesUseCase(detailRepository)
+    }
+
+    @Provides
+    fun getBasketResponseUseCase(basketRepository: BasketRepository): GetBasketResponseUseCase {
+        return GetBasketResponseUseCase(basketRepository)
+    }
+
+    @Provides
+    fun getBasketUseCase(basketRepository: BasketRepository): GetBasketUseCase {
+        return GetBasketUseCase(basketRepository)
     }
 
 }

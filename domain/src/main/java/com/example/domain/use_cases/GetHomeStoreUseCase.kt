@@ -14,7 +14,7 @@ class GetHomeStoreUseCase @Inject constructor(private val goodsRepository: Goods
             val response = goodsRepository.getHomeStore()
             emit(Resource.Success(data = response))
         } catch (e: Exception) {
-            emit(Resource.Error("Error!!!"))
+            emit(Resource.Error("Error getting home store!!!"))
         }
     }
 }

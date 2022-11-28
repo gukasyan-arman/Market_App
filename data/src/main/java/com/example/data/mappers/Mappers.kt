@@ -1,8 +1,14 @@
 package com.example.data.mappers
 
+import com.example.data.network.models.basket.BasketDTO
+import com.example.data.network.models.basket.BasketResponseDTO
+import com.example.data.network.models.detail.DetailImagesDTO
 import com.example.data.network.models.detail.DetailResponseDTO
 import com.example.data.network.models.home.BestSellerDTO
 import com.example.data.network.models.home.HomeStoreDTO
+import com.example.domain.models.basket.Basket
+import com.example.domain.models.basket.BasketResponse
+import com.example.domain.models.detail.DetailImages
 import com.example.domain.models.detail.DetailResponse
 import com.example.domain.models.home.BestSeller
 import com.example.domain.models.home.HomeStore
@@ -21,6 +27,7 @@ fun List<BestSellerDTO>.toDomain(): List<BestSeller> {
     }
 }
 
+@JvmName("toDomainHomeStoreDTO")
 fun List<HomeStoreDTO>.toDomain(): List<HomeStore> {
     return map {
         HomeStore (
@@ -49,4 +56,34 @@ fun DetailResponseDTO.toDomain(): DetailResponse {
         ssd = ssd,
         title = title
     )
+}
+
+fun BasketResponseDTO.toDomain(): BasketResponse {
+    return BasketResponse(
+        basket = basket.toDomain(),
+        delivery = delivery,
+        id = id,
+        total = total,
+    )
+}
+
+@JvmName("toDomainBasketDTO")
+fun List<BasketDTO>.toDomain(): List<Basket> {
+    return map {
+        Basket (
+            id = it.id,
+            images = it.images,
+            price = it.price,
+            title = it.title,
+        )
+    }
+}
+
+@JvmName("toDomainDetailImagesDTO")
+fun List<DetailImagesDTO>.toDomain(): List<DetailImages> {
+    return map {
+        DetailImages (
+            imageUrl = it.imageUrl
+        )
+    }
 }

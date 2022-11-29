@@ -1,23 +1,21 @@
 package com.example.data.repository
 
-import com.example.data.mappers.toDomain
 import com.example.data.network.api.GoodsService
+import com.example.data.network.models.home.BestSellerDTO
+import com.example.data.network.models.home.HomeStoreDTO
 import com.example.data.network.utils.SafeApiRequest
-import com.example.domain.models.home.BestSeller
-import com.example.domain.models.home.HomeStore
-import com.example.domain.repository.GoodsRepository
 import javax.inject.Inject
 
 class GoodsRepositoryImpl @Inject constructor(private val goodsService: GoodsService): GoodsRepository, SafeApiRequest() {
 
-    override suspend fun getBestSeller(): List<BestSeller> {
+    override suspend fun getBestSeller(): List<BestSellerDTO> {
         val response = safeApiRequest { goodsService.getAllGoods() }
-        return response.best_seller.toDomain()
+        return response.best_seller
     }
 
-    override suspend fun getHomeStore(): List<HomeStore> {
+    override suspend fun getHomeStore(): List<HomeStoreDTO> {
         val response = safeApiRequest { goodsService.getAllGoods() }
-        return response.home_store.toDomain()
+        return response.home_store
     }
 
 }

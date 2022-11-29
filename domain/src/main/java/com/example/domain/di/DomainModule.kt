@@ -1,8 +1,8 @@
 package com.example.domain.di
 
-import com.example.domain.repository.BasketRepository
-import com.example.domain.repository.DetailRepository
-import com.example.domain.repository.GoodsRepository
+import com.example.data.repository.BasketRepository
+import com.example.data.repository.DetailRepository
+import com.example.data.repository.GoodsRepository
 import com.example.domain.use_cases.*
 import dagger.Module
 import dagger.Provides

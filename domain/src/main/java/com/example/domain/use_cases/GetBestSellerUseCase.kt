@@ -1,7 +1,8 @@
 package com.example.domain.use_cases
 
+import com.example.data.repository.GoodsRepository
 import com.example.domain.models.home.BestSeller
-import com.example.domain.repository.GoodsRepository
+import com.example.domain.models.mapper.toDomain
 import com.example.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,7 +12,7 @@ class GetBestSellerUseCase @Inject constructor(private val goodsRepository: Good
     operator fun invoke(): Flow<Resource<List<BestSeller>>> = flow {
         emit(Resource.Loading(null))
         try {
-            val response = goodsRepository.getBestSeller()
+            val response = goodsRepository.getBestSeller().toDomain()
             emit(Resource.Success(data = response))
         } catch (e: Exception) {
             emit(Resource.Error("Error getting best seller!!!"))

@@ -33,7 +33,7 @@ class BasketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.basketlBackButton.setOnClickListener {
+        binding.basketBackButton.setOnClickListener {
             findNavController().navigate(R.id.action_basketFragment_to_detailFragment)
         }
 

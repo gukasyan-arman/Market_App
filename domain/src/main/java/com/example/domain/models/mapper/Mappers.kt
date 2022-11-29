@@ -1,4 +1,4 @@
-package com.example.data.mappers
+package com.example.domain.models.mapper
 
 import com.example.data.network.models.basket.BasketDTO
 import com.example.data.network.models.basket.BasketResponseDTO

@@ -1,6 +1,7 @@
 package com.example.domain.use_cases
 
-import com.example.domain.repository.DetailRepository
+import com.example.data.repository.DetailRepository
+import com.example.domain.models.mapper.toDomain
 import com.example.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
